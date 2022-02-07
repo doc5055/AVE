@@ -1,0 +1,61 @@
+<section id="signupid" class="sign-up" data-id="signupid">
+  <div class="sign-up__container container">
+    <div class="sign-up__sign-in">
+      <form action="#" class="sign-up__form sign-in__form" name="sign-in__form" novalidate>
+        <h4 class="sign-up__form-title sign-in__form-title">Sign in</h4>
+        <div class="sign-up__form-fields register__form-fields">
+          <div class="form-field">
+            <label class="form-field__label" for="form-field__input-01"></label>
+            <input id="sign-in__input-email" class="form-field__input form-field__input-required" type="email" placeholder="Your Email.." data-validate-field="form_field__email" name="form_field__email">
+          </div>
+          <div class="form-field">
+            <label class="form-field__label" for="form-field__input-02"></label>
+            <input id="sign-in__input-password" class="form-field__input form-field__input-password form-field__input-required" type="password" placeholder="Your password.." data-validate-field="sign-in__password" data-validate-field-password="sign-in__input-password" name="form_field__password">
+            <div class="form-field__message"></div>
+          </div>
+        </div>
+
+        <div class="sign-up__form-buttons sign-in__form-buttons">
+          <button type="submit" class="sign-up__form-button sign-in__form-button btn-reset">Sign in</button>
+          <a href="#" class="sign-up__form-link sign-in__form-link btn-reset"><span>Forgot your Password</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </form>
+    </div>
+    <div class="sign-up__register">
+      <form action="#" class="sign-up__form register__form" name="register__form" novalidate>
+        <h4 class="sign-up__form-title register__form-title">Register</h4>
+        <div class="sign-up__form-fields register__form-fields">
+
+          <div class="form-field">
+            <label class="form-field__label" for="form-field__input-03"></label>
+            <input id="register__input-email" class="form-field__input form-field__input-required" type="email" placeholder="Your Email.." data-validate-field="email" name="form_field__email">
+          </div>
+          <div class="form-field">
+            <label class="form-field__label" for="form-field__input-04"></label>
+            <input id="register__input-password" class="form-field__input form-field__input-password form-field__input-required" type="password" placeholder="Your password.." data-password="password" data-validate-field="register__password" data-validate-field-password="register__input-password" name="form_field__password" value="">
+            <div class="form-field__message"></div>
+          </div>
+          <div class="form-field form-field--next">
+            <label class="form-field__label" for="form-field__input-05"></label>
+            <input id="register__input-password--confirm" class="form-field__input form-field__input-password--confirm form-field__input-required" type="password" placeholder="Confirm password.." data-password-confirm="password_confirm" data-validate-field="register__password--confirm" data-validate-field-password="register__input-password" name="form_field__password_confirm" value="">
+            <div class="form-field__message"></div>
+          </div>
+
+        </div>
+        <div class="sign-up__form-checkbox register__form-checkbox form-checkbox">
+          <input id="form-checkbox__input-01" class="form-checkbox__input form-field__input-required" type="checkbox" data-validate-field="form_field__checkbox" name="form_field__checkbox">
+          <label class="form-checkbox__label" for="form-checkbox__input-01">
+            Sign up for exclusive updates, discounts, new arrivals, contests, and more!
+          </label>
+        </div>
+        <div class="sign-up__form-buttons register__form-buttons">
+          <button type="submit" class="sign-up__form-button register__form-button btn-reset">Create account</button>
+          <div class="sign-up__form-right">By clicking ‘Create Account’, you
+            agree to our
+            <a href="#" class="sign-up__form-link register__form-link btn-reset"><span>Privacy Policy</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
