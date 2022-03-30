@@ -175,16 +175,22 @@
       height: 100%;
       background-color: #f8f8f8;
 
-      img {
-        height: 100%;
-      }
-
-      &:focus,
-      &:hover {
+      &--active {
         outline: none;
         box-shadow: 0 0 24px 0 rgba(87, 81, 83, 0.3);
         transition: box-shadow 0.3s ease;
       }
+
+      img {
+        height: 100%;
+      }
+
+      // &:focus,
+      // &:hover {
+      //   outline: none;
+      //   box-shadow: 0 0 24px 0 rgba(87, 81, 83, 0.3);
+      //   transition: box-shadow 0.3s ease;
+      // }
     }
 
     &-content {
@@ -192,6 +198,7 @@
       left: 50%;
       bottom: 0;
       z-index: -1;
+      // display: none;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -206,8 +213,33 @@
       color: #727272;
       background-color: #fff;
       opacity: 0;
+      visibility: hidden;
       transform: translateX(-50%) translateY(0);
       transition: transform 0.3s ease-in-out, opacity 0.3s, box-shadow 0.3s ease;
+
+      &--active {
+        // display: flex;
+        z-index: 3;
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(144px);
+        transition: transform 0.3s ease-in-out, opacity 0.3s;
+
+        @include xl-max {
+          height: 170px;
+          transform: translateX(-50%) translateY(170px);
+        }
+
+        @include xl {
+          height: 190px;
+          transform: translateX(-50%) translateY(190px);
+        }
+
+        @include md {
+          height: 144px;
+          transform: translateX(-50%) translateY(144px);
+        }
+      }
 
       @include sm {
         display: none;
@@ -277,7 +309,7 @@
 
       i {
         position: absolute;
-        left: 50%;
+        left: 49%;
         top: 50%;
         font-family: "FontAwesome-Regular";
         font-size: 18px;
@@ -291,28 +323,30 @@
       }
     }
 
-    &-link:focus ~ .home-goods__card-content,
-    &-link:hover ~ .home-goods__card-content {
-      z-index: 3;
-      opacity: 1;
-      transform: translateX(-50%) translateY(144px);
-      transition: transform 0.3s ease-in-out, opacity 0.3s;
+    // &-link:focus ~ .home-goods__card-content,
+    // &-link:hover ~ .home-goods__card-content {
+    //   display: flex;
+    //   z-index: 3;
+    //   opacity: 1;
+    //   visibility: visible;
+    //   transform: translateX(-50%) translateY(144px);
+    //   transition: transform 0.3s ease-in-out, opacity 0.3s;
 
-      @include xl-max {
-        height: 170px;
-        transform: translateX(-50%) translateY(170px);
-      }
+    //   @include xl-max {
+    //     height: 170px;
+    //     transform: translateX(-50%) translateY(170px);
+    //   }
 
-      @include xl {
-        height: 190px;
-        transform: translateX(-50%) translateY(190px);
-      }
+    //   @include xl {
+    //     height: 190px;
+    //     transform: translateX(-50%) translateY(190px);
+    //   }
 
-      @include md {
-        height: 144px;
-        transform: translateX(-50%) translateY(144px);
-      }
-    }
+    //   @include md {
+    //     height: 144px;
+    //     transform: translateX(-50%) translateY(144px);
+    //   }
+    // }
   }
 
   &__card-01 {

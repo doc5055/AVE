@@ -523,6 +523,7 @@
   }
 
   &__advertisement {
+    display: block;
     margin-top: 57px;
     padding: 52px 0;
     text-align: center;
@@ -539,7 +540,8 @@
       color: #fff;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: #00c8c8;
       transition: background-color 0.3s ease;
     }

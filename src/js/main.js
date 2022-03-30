@@ -45,7 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
     },
 
     menu: function heroMenu() {
-      let menuLinks = document.querySelectorAll('.home-hero__menu-link');
+      const menuLinks = document.querySelectorAll('.home-hero__menu-link');
+      const menuContent = document.querySelectorAll('.menu-item__content');
+      const menuArrow = document.querySelectorAll('.fa-angle-down');
+      const menuItems = document.querySelectorAll('.home-hero__menu-item');
 
       menuLinks.forEach(link => {
         link.addEventListener('focus', menuItemCategories)
@@ -53,13 +56,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
       function menuItemCategories (event) {
         if (event.key != 'Enter' || event.which != 1 || event.keyCode != 9) {
-          document.querySelectorAll('.menu-item__content').forEach(el => {
+          menuContent.forEach(el => {
             el.classList.remove('menu-item__content--active');
           });
-          document.querySelectorAll('.fa-angle-down').forEach(el => {
+          menuArrow.forEach(el => {
             el.classList.remove('fa-angle-down--active');
           });
-          document.querySelectorAll('.home-hero__menu-link').forEach(el => {
+          menuLinks.forEach(el => {
             el.classList.remove('home-hero__menu-link--active');
           });
           if(event.currentTarget.closest('.home-hero__menu-item').querySelector('.menu-item__content')) {
@@ -76,8 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.addEventListener('keyup', menuItemCategoriesClose);
 
       function menuItemCategoriesClose (event) {
-        const items = document.querySelectorAll('.home-hero__menu-item');
-        items.forEach(el => {
+        menuItems.forEach(el => {
           if (!el.contains(event.target)) {
             if(el.querySelector('.menu-item__content')) {
               el.querySelector('.menu-item__content').classList.remove('menu-item__content--active');
@@ -86,6 +88,46 @@ document.addEventListener('DOMContentLoaded', function() {
             }
           }
         })
+      }
+    },
+
+    goods: function goodsCard() {
+      const goodsLinks = document.querySelectorAll('.home-goods__card-link');
+      const goodsCard = document.querySelectorAll('.home-goods__card');
+      const goodsContent = document.querySelectorAll('.home-goods__card-content');
+
+      goodsLinks.forEach(link => {
+        link.addEventListener('focus', goodsCardContent);
+      });
+
+      goodsCard.forEach(card => {
+        card.addEventListener('mouseover', goodsCardContent);
+        card.addEventListener('mouseout', goodsCardContentOut);
+      });
+
+      function goodsCardContent (event) {
+        if (event.key != 'Enter' || event.which != 1 || event.keyCode != 9) {
+          goodsContent.forEach(el => {
+            el.classList.remove('home-goods__card-content--active');
+          });
+          goodsLinks.forEach(el => {
+            el.classList.remove('home-goods__card-link--active');
+          });
+          if(event.currentTarget.closest('.home-goods__card').querySelector('.home-goods__card-content')) {
+            let menuItem = event.currentTarget.closest('.home-goods__card');
+            menuItem.querySelector('.home-goods__card-content').classList.add('home-goods__card-content--active');
+            menuItem.querySelector('.home-goods__card-link').classList.add('home-goods__card-link--active');
+          }
+        }
+      }
+
+      function goodsCardContentOut () {
+        goodsContent.forEach(el => {
+          el.classList.remove('home-goods__card-content--active');
+        });
+        goodsLinks.forEach(el => {
+          el.classList.remove('home-goods__card-link--active');
+        });
       }
     },
 
@@ -114,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   homeSpace.selectCurrency();
   homeSpace.menu();
+  homeSpace.goods();
   homeSpace.informationMenu();
 
   let lookbookSwiper = new Swiper('.home-lookbook__content', {

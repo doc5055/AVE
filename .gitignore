@@ -1,6 +1,7 @@
 /node_modules
 /app
 /.firebase
+.ecrc
 package-lock.json
 .firebaserc
 firebase.json
